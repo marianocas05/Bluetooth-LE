@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <!-- Gradiente de Fundo -->
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#4A90E2" Offset="0.1"/>
+            <GradientStop Color="#87CEEB" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Imagem Bluetooth -->
+            <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="image.png" HeightRequest="150" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- Texto -->
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                <Label FontAttributes="Bold" FontSize="24" VerticalOptions="Center" HorizontalOptions="Center" Text="Connect"
+                       TextColor="White"/>
+                <Label FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" Text="to any Bluetooth device nearby"
+                       TextColor="White" Opacity="0.9"/>
+            </StackLayout>
+
+            <!-- Botão -->
+            <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="Turn on"
+                        FontSize="18"
+                        BackgroundColor="White"
+                        TextColor="#4A90E2"
+                        FontAttributes="Bold"
+                        CornerRadius="25"
+                        Padding="10,5"
+                        WidthRequest="150"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        Clicked="TurnOnButtonClicked"/>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

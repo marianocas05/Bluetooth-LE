@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto.DevicesPage"
+             Title="Available Devices"
+             Shell.TitleColor="White"
+             Shell.BackgroundColor="#4A90E2">
+
+    <!-- Gradiente de Fundo -->
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#4A90E2" Offset="0.1"/>
+            <GradientStop Color="#87CEEB" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Texto -->
+            <Label Text="Scanning for Bluetooth devices..."
+                   TextColor="White"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+
+            <!-- Lista de dispositivos -->
+            <CollectionView x:Name="DevicesCollectionView"
+                ItemsSource="{Binding Devices}"
+                SelectionMode="Single"
+                SelectionChanged="OnDeviceSelected"
+                VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="White"
+                    Stroke="#E0E0E0"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10"
+                    Margin="5"
+                    Padding="10">
+                            <HorizontalStackLayout Spacing="10">
+                                <Image Source="fine.png" 
+                           HeightRequest="40" 
+                           WidthRequest="40" 
+                           VerticalOptions="Center" />
+                                <VerticalStackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               TextColor="#4A90E2" />
+                                    <Label Text="{Binding Id}" 
+                               FontSize="14" 
+                               TextColor="#7F8C8D" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Botão para fazer scan -->
+            <Button Text="Scan"
+                    FontSize="18"
+                    BackgroundColor="White"
+                    TextColor="#4A90E2"
+                    CornerRadius="25"
+                    Padding="10,5"
+                    WidthRequest="150"
+                    HorizontalOptions="Center"
+                    Clicked="ScanButtonClicked" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
