@@ -27,3 +27,6 @@ Este ficheiro contém a lógica por detrás da página de dispositivos. Ele trat
 2.	Selecionar um Dispositivo para Conectar (in development): Quando o utilizador seleciona um item da lista de dispositivos, o método OnDeviceSelected é chamado. Um DisplayAlert pergunta ao utilizador se ele deseja conectar ao dispositivo selecionado.
     - Se o utilizador confirmar, o código tenta conectar ao dispositivo selecionado ao usar o método ConnectToDeviceAsync do IAdapter.
     - Se a conexão for bem-sucedida, um alerta de confirmação é exibido.
+  
+## Conlusão
+O objetivo do projeto é conectar a dispositivos Bluetooth capazes de receber e processar áudio. No entanto, o uso do Bluetooth Low Energy (Bluetooth LE) não é a solução ideal, pois essa tecnologia é utilizada principalmente para dispositivos que priorizam baixo consumo de energia, como sensores de monitorizar a saúde, dispositivos fitness e outros aparelhos pequenos. O Bluetooth LE não oferece a "bandwidth" necessária para uma transmissão de áudio de qualidade, nem a estabilidade exigida para esse tipo de conexão. Portanto, a escolha mais adequada seria o Bluetooth Classic, que é mais apropriado para a transmissão de áudio em tempo real e garante uma conexão mais robusta e estável, sendo a melhor opção às necessidades do projeto.
